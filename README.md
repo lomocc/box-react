@@ -12,12 +12,12 @@ npm install --save box-react
 
 ## Usage
 
-```tsx
-import * as React from 'react'
+```jsx
+import React, { Component } from 'react'
 
 import MyComponent from 'box-react'
 
-class Example extends React.Component {
+class Example extends Component {
   render () {
     return (
       <MyComponent />
