@@ -1,22 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import CustomCSSProps from "./utils/CustomCSSProps";
+import factory from "./utils/factory";
 
-import styles from './styles.css'
+export const Box = factory("Box", null);
+export const Block = factory("Block", { display: "block" });
+export const Flex = factory("Flex", { display: "flex" });
+export const Grid = factory("Grid", { display: "grid" });
+export const Inline = factory("Inline", { display: "inline" });
+export const InlineBlock = factory("InlineBlock", { display: "inline-block" });
+export const InlineFlex = factory("InlineFlex", { display: "inline-flex" });
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
-
-  render() {
-    const {
-      text
-    } = this.props
-
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
-}
+export { factory, CustomCSSProps };

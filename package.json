@@ -5,9 +5,9 @@
   "author": "",
   "license": "MIT",
   "repository": "/box-react",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "dist/box-react.js",
+  "module": "dist/box-react.es.js",
+  "jsnext:main": "dist/box-react.es.js",
   "engines": {
     "node": ">=8",
     "npm": ">=5"
@@ -16,10 +16,11 @@
     "test": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
-    "start": "rollup -c -w",
+    "watch": "rollup -c -w",
     "prepare": "yarn run build",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "start": "concurrently \"yarn watch\" \"cd example &&cross-env PORT=4444 yarn start\""
   },
   "peerDependencies": {
     "prop-types": "^15.5.4",
@@ -56,5 +57,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "@emotion/is-prop-valid": "^0.7.3",
+    "concurrently": "^4.1.0"
+  }
 }

@@ -1,13 +1,14 @@
-import React, { Component } from 'react'
-
-import ExampleComponent from 'box-react'
+import { Box } from "box-react";
+import React, { Component } from "react";
 
 export default class App extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <ExampleComponent text='Modern React component module' />
+        <Box color="red" fontSize={40}>
+          Modern React component module Box
+        </Box>
       </div>
-    )
+    );
   }
 }
