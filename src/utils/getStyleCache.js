@@ -61,13 +61,13 @@ export default function getStyleCache() {
           .forEach(k => {
             const selector = '.' + _classNameCache[key];
             // prettier-ignore
-            const { pseudoclass, pseudoelement, mediaQuery, styles } = styleObj[k];
+            const { pseudoclass, pseudoelement, mediaQuery, styles, inlineStyles } = styleObj[k];
 
             let rule =
               selector +
               (pseudoclass ? ':' + pseudoclass : '') +
               (pseudoelement ? '::' + pseudoelement : '') +
-              ` {${styles}}`;
+              ` {${styles}${inlineStyles}}`;
 
             if (mediaQuery) {
               rule = `@media ${mediaQuery} { ${rule} }`;

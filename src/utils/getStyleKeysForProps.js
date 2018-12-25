@@ -133,7 +133,10 @@ export default function getStyleKeysForProps(props, pretty = false) {
       (pseudoelement ? '::' + pseudoelement : '');
 
     if (!styleKeyObj.hasOwnProperty(key)) {
-      styleKeyObj[key] = { styles: pretty ? '\n' : '' };
+      styleKeyObj[key] = {
+        styles: pretty ? '\n' : '',
+        inlineStyles: pretty ? '\n' : ''
+      };
       if (mediaQuery) {
         styleKeyObj[key].mediaQuery = mediaQuery;
       }
@@ -151,7 +154,7 @@ export default function getStyleKeysForProps(props, pretty = false) {
     } else {
       classNameKey += originalPropName + ':' + styleValue + ';';
     }
-    styleKeyObj[key].styles += getStyleValues(propName, styleValue, pretty);
+    getStyleValues(styleKeyObj[key], propName, styleValue, pretty);
   }
 
   // append media query key
@@ -166,6 +169,7 @@ export default function getStyleKeysForProps(props, pretty = false) {
   if (classNameKey === '') {
     return null;
   }
+  console.log('styleKeyObj', styleKeyObj);
   styleKeyObj.classNameKey = classNameKey;
   return styleKeyObj;
 }
