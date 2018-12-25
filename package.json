@@ -5,6 +5,7 @@
   "author": "",
   "license": "MIT",
   "repository": "https://github.com/lomocc/box-react",
+  "typings": "typings.d.ts",
   "main": "dist/box-react.js",
   "module": "dist/box-react.es.js",
   "jsnext:main": "dist/box-react.es.js",

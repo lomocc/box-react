@@ -169,7 +169,6 @@ export default function getStyleKeysForProps(props, pretty = false) {
   if (classNameKey === '') {
     return null;
   }
-  console.log('styleKeyObj', styleKeyObj);
   styleKeyObj.classNameKey = classNameKey;
   return styleKeyObj;
 }
