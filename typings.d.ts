@@ -10,6 +10,7 @@ declare module 'box-react' {
 
   type IntrinsicComponentClass = ComponentClass<BoxProps>;
 
+  export const Text: IntrinsicComponentClass;
   export const Box: IntrinsicComponentClass;
   export const Block: IntrinsicComponentClass;
   export const Flex: IntrinsicComponentClass;
